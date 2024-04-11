@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="md:flex md:flex-row ">
+    <div class="seccion-tarjetas relative md: md:grow">
+      <!--espalda-->
+      <div class="espalda rounded-md relative -right-24 top-10  md:top-80 md:-right-24 lg:top-80 lg:-right-36">
+       <p class="absolute top-20 right-6 text-xs" id="cvv-tarjeta">000</p>
+      </div>
+      <!--frente-->
+      <div class="rounded-md frente p-5 relative left-5 bottom-9 lg:left-20 lg:bottom-14">
+        <div class="flex gap-x-2 items-center mb-10 mt-2">
+        <div class=" bg-white rounded-full bola1"></div>
+        <div class="bola2 border-white border bg-transparent rounded-full"></div>
+      </div>
+        <div class="flex flex-col justify-end">
+          <p id="numero-tarjeta" class="text-xl tracking-wider text-white">
+            0000 0000 0000 0000
+          </p>
+          <div class="flex text-sm uppercase mt-4">
+            <p id="nombre-tarjeta" class="text-xs text-white">Jane Appleseed</p>
+            <p  class="ml-28 text-xs text-white"><span id="mes-tarjeta">00</span>/<span id="año-tarjeta">00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class=" md:px-40 lg:px-60 xl:px-96 mt-14 p-5 md:flex-1" id="modal-datos">
+    <div class="mt-8">
+      <label for="nombre-cliente" class="text-base font-medium text-gray-700 uppercase tracking-wider" >Cardholder Name</label>
+      <input type="text" id="nombre-cliente" name="cardholder" placeholder="e.g. Jane Appleseed" class= "mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full p-3 shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+
+    <div class="mt-8">
+      <label for="cardNumber" class="text-base font-medium text-gray-700 uppercase tracking-wider">Card Number</label>
+      <input type="text" maxlength="16" id="numero-cliente" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full p-3 shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+
+    <div class="mt-8 flex">
+      <div class="mt-1 mr-4">
+      <label for="expDate" class="text-sm font-medium text-gray-700 uppercase ">Exp. Date (MM/YY)</label>
+      <div class="flex w-36 mt-3">
+      <input type="text" id="mes-cliente" name="expMonth" maxlength="2" placeholder="MM" class="tracking-wider focus:ring-indigo-500 focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md p-3">
+      <input type="text" id="año-cliente" name="expYear" maxlength="2" placeholder="YY" class="tracking-wider ml-2 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-1/2 shadow-sm sm:text-sm border-gray-300 rounded-md"></div>
+      <small class="text-red-600 hidden">Cant be blank</small>
+      </div>
+      <div class="mt-1">
+      <label for="cvc" class="text-sm font-medium text-gray-700 uppercase tracking-wider">CVC</label>
+      <input type="text" id="cvv-cliente" maxlength="3" name="cvc" placeholder="e.g. 123" class="mt-3 focus:ring-indigo-500 p-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+      <small class="text-red-600 hidden">Cant be blank</small>
+    </div>
+    </div>
+
+    <div class="mt-8">
+      <button type="button" id="confirmar" class=" w-full  text-center items-center px-4 py-5 text-sm font-medium rounded-xl shadow-sm mb-5 text-white bg-purple-900">
+      Confirm
+      </button>
+    </div>
+  </div>
+    <div class="mt-32 ml-5 mr-5 flex-col justify-center items-center gap-y-8 hidden md:px-40 lg:px-60 xl:px-96 md:flex-1 md:mt-16 xl:mt-0 xl:text-center" id="modal-exito">
+      <img src="images/icon-complete.svg" class="img-check" alt="">
+      <p class="mt-2 text-lg uppercase tracking-widest ">Thank you! </p> <p class="text-gray-500"> We've added your card details</p>
+       <button type="button" id="volver" class=" w-full mt-6 text-center items-center px-4 py-5 text-sm font-medium rounded-xl shadow-sm mb-5 text-white bg-purple-900">
+      Continue
+      </button>
+    </div>
+ 
+  </button>
+</div>
+</div>
+  <!--
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>-->
+    <script src="app.js"></script>
+  </body>
+</html>
